@@ -6,6 +6,21 @@
 //  Copyright (c) 2015 Maroof Khan. All rights reserved.
 //
 
+/*                                  :Core Data Stack:
+The core data stack consists of
+    1. NSManagedObjectContext:
+        An instance of NSManagedObjectContext represents a single “object space” or scratch pad in an application. Its primary responsibility is to manage a collection of managed objects. These objects form a group of related model objects that represent an internally consistent view of one or more persistent stores. A single managed object instance exists in one and only one context, but multiple copies of an object can exist in different contexts. Thus object uniquing is scoped to a particular context.
+
+    2. NSPresistenceStoreCoordinator:
+        Instances of NSPersistentStoreCoordinator associate persistent stores (by type) with a model (or more accurately, a configuration of a model) and serve to mediate between the persistent store or stores and the managed object context or contexts. Instances of NSManagedObjectContext use a coordinator to save object graphs to persistent storage and to retrieve model information. A context without a coordinator is not fully functional as it cannot access a model except through a coordinator. The coordinator is designed to present a façade to the managed object contexts such that a group of persistent stores appears as an aggregate store. A managed object context can then create an object graph based on the union of all the data stores the coordinator covers.
+
+    3. NSManagedObject:
+        An NSManagedObjectModel object describes a schema—a collection of entities (data models) that you use in your application.
+
+
+*/
+
+
 /*
                                     :Light Migration Guide:
 
